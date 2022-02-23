@@ -5,11 +5,11 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: rpgquestboard/content
+  path: content
   label: Pages
   create: all
   match: "*"
-upload_dir: rpgquestboard/static/uploads
+upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
 use_front_matter_path: false
