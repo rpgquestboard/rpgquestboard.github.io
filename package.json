@@ -1,27 +1,44 @@
 {
-  "name": "rpgquestboard.github.io",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rpgquestboard/rpgquestboard.github.io.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rpgquestboard/rpgquestboard.github.io/issues"
-  },
-  "homepage": "https://github.com/rpgquestboard/rpgquestboard.github.io#readme",
-  "type": "module",
-  "dependencies": {
-    "@11ty/eleventy": "^3.1.2"
-  },
-  "scripts": {
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/your-repo-name/"
-  }
+	"name": "rpgquestboard.github.io",
+	"version": "1.0.0",
+	"description": "The rpgquestboard.com website",
+	"main": "index.html",
+	"scripts": {
+		"build": "npx @11ty/eleventy",
+		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
+		"build-ghpages": "npx @11ty/eleventy --pathprefix=/rpgquestboard.github.io/",
+		"start": "npx @11ty/eleventy --serve --quiet",
+		"start-ghpages": "npx @11ty/eleventy --pathprefix=/rpgquestboard.github.io/ --serve --quiet",
+		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
+		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rpgquestboard/rpgquestboard.github.io.git"
+	},
+	"keywords": ["ttrpg"],
+	"author": "nick@rpgquestboard.com",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/rpgquestboard/rpgquestboard.github.io/issues"
+	},
+	"homepage": "https://www.rpgquestboard.com/",
+	"type": "module",
+	"devDependencies": {
+		"@11ty/eleventy": "^3.1.2",
+		"@11ty/eleventy-img": "^6.0.4",
+		"@11ty/eleventy-navigation": "^1.0.4",
+		"@11ty/eleventy-plugin-rss": "^2.0.4",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+		"cross-env": "^7.0.3",
+		"luxon": "^3.6.1",
+		"prismjs": "^1.30.0",
+		"zod": "^3.25.67",
+		"zod-validation-error": "^3.5.2",
+		"@zachleat/heading-anchors": "^1.0.5"
+	},
+	"dependencies": {
+		"@11ty/eleventy": "^3.1.2"
+	}
 }
