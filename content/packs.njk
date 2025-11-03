@@ -1,13 +1,15 @@
----js
-const eleventyNavigation = {
-    key: "MTG Pack",
-    order: 6
-};
+---
+eleventyNavigation:
+  key: MTG Packs
+  order: 6
+layout: layouts/base.njk
+permalink: /packs/
 ---
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>MTG RPG Adventure Generator</title>
+	{% raw %}
         <script type="text/javascript">
              function get_random_element(array) {
                 return array[Math.floor(Math.random() * array.length)];
@@ -38,6 +40,7 @@ const rares = ["/0/0/00020b05-ecb9-4603-8cc1-8cfa7a14befc.jpg?1562633475","/0/0/
 			}
 			window.onload = fill_images;
 		</script>
+		{% endraw %}
 	</head>
 	<body>
                 <button onclick="fill_images()">New Adventure</button>

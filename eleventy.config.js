@@ -122,7 +122,7 @@ export default async function(eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter("excerpt", (post) => {
-  		const content = post.replace(/(<([^>]+)>)/gi, "");
+		const content = post.replace(/(<([^>]+)>)/gi, "");
 		return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
 	});
 
@@ -138,6 +138,7 @@ export default async function(eleventyConfig) {
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 	eleventyConfig.addPassthroughCopy({"content/mtg.html": "mtg.html" });
 	eleventyConfig.addPassthroughCopy({"content/packs.html": "packs.html" });
+	eleventyConfig.addPassthroughCopy("CNAME");
 };
 
 export const config = {
