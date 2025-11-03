@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>It Came From The Dollar Store - Ep 1 - The Diamond in the Rough</title>
+		<meta name="description" content="A post expanding on the first youtube video about making ttrpg adventures with dollar store packs of magic the gathering cards.">
+		<link rel="alternate" href="/rpgquestboard.github.io/feed/feed.xml" type="application/atom+xml" title="RPG Questboard">
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+  --color-gray-20: #f4ecd8;
+  --color-gray-50: #d7c7a3;
+  --color-gray-90: #2b1d0e;
+
+  --background-color: #fdf8ec;
+
+  --text-color: var(--color-gray-90);
+  --text-color-link: #7a3e0a; /* warm ink brown */
+  --text-color-link-active: #a6550d;
+  --text-color-link-visited: #5b3410;
+  --syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+:root {
+  --color-gray-20: #2b2b2b;
+  --color-gray-50: #555;
+  --color-gray-90: #e8e6e3;
+
+  --background-color: #1a1a1a;
+
+  --text-color: var(--color-gray-90);
+  --text-color-link: #d4b86a; /* brass */
+  --text-color-link-active: #ffce6e;
+  --text-color-link-visited: #a88c55;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 40em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+.links-nextprev > * {
+	flex-grow: 1;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	gap: .5em 1em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+	</head>
+	<body>
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/rpgquestboard.github.io/" class="home-link">RPG Questboard</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/rpgquestboard.github.io/">Home</a></li>
+					<li class="nav-item"><a href="/rpgquestboard.github.io/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/rpgquestboard.github.io/about/">About</a></li>
+					<li class="nav-item"><a href="/rpgquestboard.github.io/feed/feed.xml">Feed</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+<h1 id="it-came-from-the-dollar-store-ep-1-the-diamond-in-the-rough">It Came From The Dollar Store - Ep 1 - The Diamond in the Rough</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2025-10-30">30 October 2025</time></li>
+	<li><a href="/rpgquestboard.github.io/tags/ttrpg/" class="post-tag">ttrpg</a>, </li>
+	<li><a href="/rpgquestboard.github.io/tags/adventures/" class="post-tag"> adventures</a>, </li>
+	<li><a href="/rpgquestboard.github.io/tags/mtg/" class="post-tag"> mtg</a></li>
+</ul>
+
+<h2 id="what-is-this">What is this?</h2>
+<p>I think the popular trading card game, Magic: The Gathering (mtg), is a rich source of adventure inspiration for tabletop roleplaying games. Many dollar stores sell packs of ~15 cards from various mtg sets that have been repacked by people who buy bulk lots of low-value cards. Luckily for most GMs, a card's value in mtg has no bearing in it's utility for creating ttrpg adventures. Cards contain a wealth of useful information for a GM, including great art, flavour text, evocative names, mechanics that are fantastic in nature, and even relative values for cost and strength. I recorded a video of myself opening a cheap dollar store pack and explaining my thought processs for creating an adventure as I revealed each card. I had fun doing this and plan to record a series of these videos. The video is linked below, with a write-up of the adventure. This version contains no stats or suggestion of system but I'll do that with subsequent videos. You know what they say, make it exist, then make it good.</p>
+<h2 id="the-video">The Video</h2>
+<p>First video in this mini-series. Please forgive the audio and video quality. Just getting this stuff figured out.</p>
+<div id="JZfN1XGMZ6s" class="eleventy-plugin-youtube-embed" style="position:relative;width:100%;padding-top: 56.25%;"><iframe style="position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;" width="100%" height="100%" frameborder="0" title="Embedded YouTube video" src="https://www.youtube-nocookie.com/embed/JZfN1XGMZ6s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<h2 id="the-adventure">The Adventure</h2>
+<h3 id="background">Background</h3>
+<p>A massive construct is roaming the province, destroying forests, towns, and other locations seemingly at random. It uses a powerful blade-like blasting spell that does necrotic-type damage.</p>
+<h3 id="adventure-hook-start">Adventure Hook / Start</h3>
+<p>The magistrate of a local town summons the PCs to discuss the issue. The magistrate's chief guard, a monk (possibly Genasi or with a magical background), details the creature and it's path of destruction to the PCs. The chief guard notes that the creature seems to be impervious to most physical weapons and weaker spells. The magistrate tells the PCs that there is a well known band of entertainers in the town who are said to have travelled far and wide and seen many strange things, and they may have some valuable information. The magistrate is prepared to reward the PCs for any assistance in defeating the creature, or at least saving their town.</p>
+<h3 id="the-entertainers">The Entertainers</h3>
+<p>The troupe of entertainers, lead by a sheap-headed bard and composed of a powerful wrestler and an agile tumbler/high-wire daredevil, are setup in the middle of town. The entertainers are eager to make some money at the town, stock up on supplies, and head out, fearing the town may be in the creature's path. If the PCs can pay or can put on a good show with the entertainers that draws in some funds from the town, the entertainers will help them. The entertainers are aware of a powerful magic artifact (details unsure) in a ruined temple at the heart of a forest. The forest is guarded by a powerful mage/druid who is protective of his territory but who isn't unreasonable. They tell the party that the forest is located about 2 day's travel North along the River of Tears, a river often avoided for its dangerous waters, frequent insect attacks, and other strange encounters.</p>
+<h3 id="the-river">The River</h3>
+<p>The river provides an opportunity for exploration challenges. Attacks by swarms of insects or river creatures. The PCs can also encounter a merfolk mystic living in the river who is aware of their journey. They may be willing to assist in exchange for something or by passing a relevant skill check. The mystic could have information related to the druid who guards the forest, the magic item at the heart of the forest which would have power over the construct, or information about the construct itself.</p>
+<h3 id="the-druids-forest">The Druid's Forest</h3>
+<p>The druid / mage lives in a large forest spanning hundreds of kilometeres, filling the valley between the river and the mountains. Many travellers and enterprising lumberjacks have been warned to stear clear of the forest lest they face the druid's wrath. In reality, he's not that bad but expects anyone entering the forest to leave things as they found them, which includes not cutting down tress, digging in the ground, or hunting the forest's inhabitants. The druid will be helpful if he feels the construct poses a thread to his forest. He can tell the PCs about the gem at the heart of the shrine in the middle of his forest. He doesn't care much for the artifact as he has no use for it but has decided that it is likely powerful and requires guarding.</p>
+<h3 id="the-artifact-and-the-shrine">The Artifact and the Shrine</h3>
+<p>The gem at the center of the shrine can be used to either issue simple commands to the construct or can proviude combat benefits, whatever the GM feels suits their game. The gem sits in the centre of a shrine that is half grown-over by vines and weeds, which the druid encourages. The shrine can be expanded into a simple 5-room dungeon or other structure if the GM needs more content for their game. Otherwise, a simple skill check can be used to fetch the gem. The check is required because the gem is powerful artifact of command and, if a PC fails the check, will be compelled by the gem to transport it far away and give it to a powerful general, after which point the gem will instruct that person in the use of the construct. The gem is not evil, it simply wishes to serve the most powerful warriors and see the construct used in great battles.</p>
+<h3 id="the-construct">The Construct</h3>
+<p>It's a big boy. Stat as needed. A large golem would be most appropriate. It cannot communicate and is not sentient. It has sufficient intelligence to fight tactically, as it is a golem built for war. It weilds a  black blade of necrotic energy, half spell, half metal. It should be VERY difficult to defeat for anyone not weilding the gem. An army 300 strong in full armor with a smattering of magical weapons would be able to destroy the construct and would sustain ~70% casulties.</p>
+
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a></em>
+			</p>
+		</footer>
+
+		<!-- This page `/blog/20251030-dollarstore1/` was built on 2025-11-03T16:42:27.747Z -->
+		<script type="module" src="/rpgquestboard.github.io/dist/cC8wS6ZjFU.js"></script>
+	</body>
+</html>
