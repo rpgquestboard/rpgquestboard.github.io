@@ -136,6 +136,8 @@ export default async function(eleventyConfig) {
 	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+	eleventyConfig.addPassthroughCopy({"content/mtg.html": "mtg.html" });
+	eleventyConfig.addPassthroughCopy({"content/packs.html": "packs.html" });
 };
 
 export const config = {
