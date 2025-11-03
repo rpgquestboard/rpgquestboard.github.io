@@ -6,8 +6,8 @@ const eleventyNavigation = {
 ---
 # About
 
-Writing system agnostic indie ttrpg scenarios alongside 
-@questexpress.bsky.social
-
+Writing system agnostic indie ttrpg scenarios alongside @questexpress.bsky.social
 Love talking about all things ttrpg.
-rpgquestboard.itch.io (I'm working on it..)
+
+YouTube: https://www.youtube.com/@rpgquestboard4109
+Itch.io: rpgquestboard.itch.io
