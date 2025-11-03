@@ -6,6 +6,8 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 import pluginFilters from "./_config/filters.js";
 
+import embedYouTube from "eleventy-plugin-youtube-embed";
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
 	// Drafts, see also _data/eleventyDataSchema.js
@@ -76,11 +78,11 @@ export default async function(eleventyConfig) {
 		},
 		metadata: {
 			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
+			title: "RPG Questboard",
+			subtitle: "TTRPG Adventures and Musings",
+			base: "https://rpgquestboard.com/",
 			author: {
-				name: "Your Name"
+				name: "Nick"
 			}
 		}
 	});
@@ -118,6 +120,14 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addShortcode("currentBuildDate", () => {
 		return (new Date()).toISOString();
 	});
+
+	eleventyConfig.addFilter("excerpt", (post) => {
+  		const content = post.replace(/(<([^>]+)>)/gi, "");
+		return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
+	});
+
+	// Other Plugins
+	eleventyConfig.addPlugin(embedYouTube);
 
 	// Features to make your build faster (when you need them)
 

@@ -6,4 +6,8 @@ const eleventyNavigation = {
 ---
 # About
 
-I am a person that writes stuff.
+Writing system agnostic indie ttrpg scenarios alongside 
+@questexpress.bsky.social
+
+Love talking about all things ttrpg.
+rpgquestboard.itch.io (I'm working on it..)
